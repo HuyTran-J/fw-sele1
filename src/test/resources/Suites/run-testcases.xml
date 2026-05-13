@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Jin">
+	<parameter name ="browser" value="chrome"/>
+	<test name="TestCase">	
+		<classes>
+			<class name="testcases.TestCase"/>
+		</classes>
+	</test>
+</suite>
