@@ -6,14 +6,22 @@ import org.openqa.selenium.WebElement;
 import dataObjects.User;
 import helpers.Constant;
 import helpers.ElementsUtils;
+import heplers.Locator;
 import helpers.Logger;
 
 public class LoginPage extends BasePage  {
 	
-	private By txtEmail = By.id("username");
-	private By txtPassword = By.id("password");
-	private By btnLogin = By.xpath("//input[@value='login']");
-	private By lblErrorMessage = By.xpath("//p[contains(@class, 'error')]");
+	private ElementsUtils txtEmail = new ElementsUtils(Locator.name("username"));
+	private ElementsUtils txtPassword = new ElementsUtils(Locator.name("password"));
+	private ElementsUtils btnLogin = new ElementsUtils(Locator.xpath("//input[@value='login']"));
+	private ElementsUtils lblErrorMessage = new ElementsUtils(Locator.xpath("//p[contains(@class, 'error')]"));
+
+
+	
+//	private By txtEmail = By.id("username");
+//	private By txtPassword = By.id("password");
+//	private By btnLogin = By.xpath("//input[@value='login']");
+//	private By lblErrorMessage = By.xpath("//p[contains(@class, 'error')]");
 	
 	public LoginPage() 
 	{

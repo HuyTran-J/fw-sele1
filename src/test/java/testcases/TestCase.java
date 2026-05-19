@@ -25,40 +25,40 @@ import pageobjects.thirdPartySite.MailBoxPage;
 
 public class TestCase extends TestBase{
 
-//@Test
-//	public void TC01() {
-//		//User can log into Railway with valid username and password
-//
-//		//Data prepare
-//		HomePage homePage = new HomePage();
-//		LoginPage loginPage = new LoginPage();
-//	
-//		
-//		var email = "huyy.tran0801@gmail.com";
-//		var password = "Huyyy@08022000";
-//	    var user = new User(email,password);
-//	    var welcomeMsg = "Welcome to Safe Railway";
-//
-//        //pre.Navigate to Railway to register
-//		DriverUtils.driver.navigate().to(Constant.URL);
-//	
-//		
-//		//Step1. Navigate to QA Railway Website
-//		BrowserUtils.navigateTo(Constant.URL);
-//		
-//		//Step2. Click on "Login" tab
-//		homePage.selectMenu(Menu.LOGIN.toString());
-//		
-//		//Step3. Enter valid Email and Password
-//		homePage.selectMenu(Menu.LOGIN.toString());
-//		loginPage.login(user);
-//		
-//		//Step4. Click on "Login" button
-//		loginPage.clickLoginButton();
-//		
-//		//VP:User is logged into Railway. Welcome user message is displayed.
-//        assertEquals(homePage.getdashBoardNotificationMsg(), welcomeMsg, "Welcome user message displayed");
-//	}	
+@Test
+	public void TC01() {
+		//User can log into Railway with valid username and password
+
+		//Data prepare
+		HomePage homePage = new HomePage();
+		LoginPage loginPage = new LoginPage();
+	
+		
+		var email = "huyy.tran0801@gmail.com";
+		var password = "Huyyy@08022000";
+	    var user = new User(email,password);
+	    var welcomeMsg = "Welcome to Safe Railway";
+
+        //pre.Navigate to Railway to register
+		DriverUtils.driver.navigate().to(Constant.URL);
+	
+		
+		//Step1. Navigate to QA Railway Website
+		BrowserUtils.navigateTo(Constant.URL);
+		
+		//Step2. Click on "Login" tab
+		homePage.selectMenu(Menu.LOGIN.toString());
+		
+		//Step3. Enter valid Email and Password
+		homePage.selectMenu(Menu.LOGIN.toString());
+		loginPage.login(user);
+		
+		//Step4. Click on "Login" button
+		loginPage.clickLoginButton();
+		
+		//VP:User is logged into Railway. Welcome user message is displayed.
+        assertEquals(homePage.getdashBoardNotificationMsg(), welcomeMsg, "Welcome user message displayed");
+	}	
 //	
 //	@Test
 //	public void TC02() {
@@ -174,61 +174,61 @@ public class TestCase extends TestBase{
 //        assertEquals(homePage.getdashBoardNotificationMsg(), notiMsg, "You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.");
 //	}
 	
-	@Test
-	public void TC05() {
-		//User can't login with an account hasn't been activated
-
-		//Data prepare
-		HomePage homePage = new HomePage();
-		MailBoxPage mailboxPage = new MailBoxPage();
-		RegisterPage registerPage = new RegisterPage();
-		LoginPage loginPage = new LoginPage();
-	
-		var username = "Jin_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("HHmmss"));
-		var emailDomain = "sharklasers.com";
-		var userNameEmail = username + "@" + emailDomain;
-		var password = "Test!123";
-		var pidNumber = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddyyyyHHmmss"));
-		var user = new User(userNameEmail,password,pidNumber);
-		var emailTitle = "Please confirm your account " + userNameEmail;
-	    var errorMsg = "Invalid username or password. Please try again";
-	   
-	
-
-        //pre.Navigate to Railway to register
-		DriverUtils.driver.navigate().to(Constant.URL);
-		
-		//pre.Go to register
-	    homePage.selectMenu(Menu.REGISTER.toString());
-		
-		//pre.enter credential
-		registerPage.register(user);
-		
-//		//pre.open mail box
-//		DriverUtils.driver.navigate().to(Constant.MAIL_BOX_URL);
-
-		
-//		//pre.enter email info
-//		mailboxPage.setEmailUserName(username);
-//		mailboxPage.selectEmailDomain(emailDomain);
-//		mailboxPage.selectExpectedEmail(emailTitle);
+//	@Test
+//	public void TC05() {
+//		//User can't login with an account hasn't been activated
+//
+//		//Data prepare
+//		HomePage homePage = new HomePage();
+//		MailBoxPage mailboxPage = new MailBoxPage();
+//		RegisterPage registerPage = new RegisterPage();
+//		LoginPage loginPage = new LoginPage();
+//	
+//		var username = "Jin_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("HHmmss"));
+//		var emailDomain = "sharklasers.com";
+//		var userNameEmail = username + "@" + emailDomain;
+//		var password = "Test!123";
+//		var pidNumber = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMddyyyyHHmmss"));
+//		var user = new User(userNameEmail,password,pidNumber);
+//		var emailTitle = "Please confirm your account " + userNameEmail;
+//	    var errorMsg = "Invalid username or password. Please try again";
+//	   
+//	
+//
+//        //pre.Navigate to Railway to register
+//		DriverUtils.driver.navigate().to(Constant.URL);
 //		
-		
-		//Step1. Navigate to QA Railway Website
-		BrowserUtils.navigateTo(Constant.URL);
-		
-		//Step2. Click on "Login" tab
-		homePage.selectMenu(Menu.LOGIN.toString());
-		
-		//Step3. Enter username and password of account hasn't been activated.
-		homePage.selectMenu(Menu.LOGIN.toString());
-		loginPage.login(user);
-		
-		//Step4. Click on "Login" button
-		loginPage.clickLoginButton();
-		
-		//VP:"Invalid username or password. Please try again" is shown
-        assertEquals(homePage.getdashBoardNotificationMsg(), errorMsg, "Invalid username or password. Please try again");
-        
-	}
+//		//pre.Go to register
+//	    homePage.selectMenu(Menu.REGISTER.toString());
+//		
+//		//pre.enter credential
+//		registerPage.register(user);
+//		
+////		//pre.open mail box
+////		DriverUtils.driver.navigate().to(Constant.MAIL_BOX_URL);
+//
+//		
+////		//pre.enter email info
+////		mailboxPage.setEmailUserName(username);
+////		mailboxPage.selectEmailDomain(emailDomain);
+////		mailboxPage.selectExpectedEmail(emailTitle);
+////		
+//		
+//		//Step1. Navigate to QA Railway Website
+//		BrowserUtils.navigateTo(Constant.URL);
+//		
+//		//Step2. Click on "Login" tab
+//		homePage.selectMenu(Menu.LOGIN.toString());
+//		
+//		//Step3. Enter username and password of account hasn't been activated.
+//		homePage.selectMenu(Menu.LOGIN.toString());
+//		loginPage.login(user);
+//		
+//		//Step4. Click on "Login" button
+//		loginPage.clickLoginButton();
+//		
+//		//VP:"Invalid username or password. Please try again" is shown
+//        assertEquals(homePage.getdashBoardNotificationMsg(), errorMsg, "Invalid username or password. Please try again");
+//        
+//	}
 }
