@@ -33,15 +33,13 @@ public class TestCase extends TestBase{
 		HomePage homePage = new HomePage();
 		LoginPage loginPage = new LoginPage();
 	
-		
-		var email = "huyy.tran0801@gmail.com";
-		var password = "Huyyy@08022000";
-	    var user = new User(email,password);
-	    var welcomeMsg = "Welcome to Safe Railway";
+		User user = new User(
+	            "huyy.tran0801@gmail.com",
+	            "Huyyy@08022000"
+	    );
 
-        //pre.Navigate to Railway to register
-		DriverUtils.driver.navigate().to(Constant.URL);
-	
+	    String expectedMsg = "Welcome to Safe Railway";
+
 		
 		//Step1. Navigate to QA Railway Website
 		BrowserUtils.navigateTo(Constant.URL);
