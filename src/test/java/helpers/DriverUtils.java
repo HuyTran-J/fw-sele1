@@ -21,11 +21,13 @@ public class DriverUtils {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
+			
 		}
 		case "firefox": {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			break;
+			
 		}
 		case "edge": {
 			WebDriverManager.edgedriver().setup();
