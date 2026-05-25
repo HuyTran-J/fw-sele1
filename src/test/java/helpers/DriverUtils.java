@@ -27,6 +27,11 @@ public class DriverUtils {
 			driver = new FirefoxDriver();
 			break;
 		}
+		case "edge": {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			break;
+		}
 		default:
 			var message = "Browser" + browser + "was not supported";
 			Logger.log(message);

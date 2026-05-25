@@ -37,7 +37,6 @@ public class ElementsUtils
 
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-
 	
 	public static boolean isElementExists(By locator, int timeoutInSeconds) 
 	{
